@@ -2,7 +2,9 @@ package com.example.java8_study;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.IntConsumer;
 import java.util.function.UnaryOperator;
 
 class FooTest {
@@ -32,5 +34,29 @@ class FooTest {
         // (10 + T) * 2
 
         UnaryOperator<Integer> plus10Unary = i -> i + 10;
+    }
+
+    @Test
+    void 변수캡쳐() {
+        int baseNumber = 10;
+
+        // 로컬 클래스
+        class LocalClass {
+            void  printBaseNumber() {
+                System.out.println(baseNumber);
+            }
+        }
+
+        // 익명클래스에서 로컬변수 참조
+        Consumer<Integer> integerConsumer = new Consumer<Integer>() {
+            @Override
+            public void accept(Integer integer) {
+                System.out.println(baseNumber);
+            }
+        };
+
+        IntConsumer printInt = (i) -> System.out.println(i + baseNumber);
+
+        printInt.accept(10);
     }
 }
