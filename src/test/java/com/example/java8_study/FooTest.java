@@ -21,7 +21,7 @@ class FooTest {
 
     @Test
     void Plus10테스트() {
-        Function<Integer, Integer> plus10 = i -> i +10;
+        Function<Integer, Integer> plus10 = i -> i + 10;
         Function<Integer, Integer> multiply2 = i -> i * 2;
 
         System.out.println(plus10.apply(10));
