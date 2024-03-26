@@ -41,4 +41,14 @@ class GreetingTest {
         String[] names = {"test1", "test2", "test3"};
         Arrays.sort(names, String::compareToIgnoreCase);
     }
+
+    @Test
+    void 메소드_레퍼런스() {
+        Greeting greeting = new Greeting();
+        UnaryOperator<String> hi = Greeting::hi;
+        UnaryOperator<String> hello = greeting::hello;
+
+        System.out.println(hi + " me");
+        System.out.println(hello + " me");
+    }
 }
