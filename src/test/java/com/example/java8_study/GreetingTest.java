@@ -3,12 +3,9 @@ package com.example.java8_study;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class GreetingTest {
     private Greeting greeting;
